@@ -42,6 +42,10 @@ span {
     margin: 0; /* Remove any default margins */
 }
 
+.favicon {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
 /* Hamburger */
 .hamburger {
     grid-area: 1 / 5 / 2 / 6; /* Hamburger spans last two columns in the first row */
@@ -145,32 +149,46 @@ span {
 
 /* ------------------SERVICE SECTION--------------------------- */
 
-.service-container {
+.service {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: center;
+    align-items: stretch; /* Ensure all cards have the same height */
+    gap: 10px; /* Spacing between cards */
+    background-color: darkred;
 }
 
-.service-content .box {
-    background: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 5px 5px 27px 5px rgba(0,0,0,0.63);
+    transition: 0.3s;
     flex: 1;
-    margin: 0 10px;
-}
+    background-color: aliceblue;
+    margin: 80px;
+  }
 
-.service-content .box .image {
-    height: 100px;
-    background: darkred;
-    margin-bottom: 10px;
-    border-radius: 50%;
+.card img {
+    height:60%;
+    object-fit: cover;
 }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 10px 16px;
+  }
 
-.service-content .box .text {
-    font-size: 14px;
+  .container h4 {
+    font-size: 1.5rem;
+  }
+
+  .container p {
+    font-size: 1.25rem;
+    padding-top: 25px;   
 }
 
 /* ------------------ABOUT SECTION--------------------------- */
