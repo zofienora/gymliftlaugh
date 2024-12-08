@@ -1,11 +1,15 @@
 // THE HAMBURGER 
-document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.getElementById("hamburger");
-    const navLinks = document.getElementById("nav-links");
+// Get elements
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+// Show the menu on hamburger click
+hamburger.addEventListener('click', () => {
+    navLinks.classList.add('active');
 });
 
+// Hide the menu when the mouse leaves the links
+navLinks.addEventListener('mouseleave', () => {
+    navLinks.classList.remove('active');
+});
 

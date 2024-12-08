@@ -13,32 +13,45 @@ span {
     color: darkred;
 }
 
+/* ------------------MAIN SECTION--------------------------- */
 
-/* ------------------HEADER--------------------------- */
-
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     background-color: black;
-    color: white;
+    height: 100vh; /* Ensure it spans the full viewport height */
 }
 
 /* Logo */
+.logo {
+    grid-area: 1 / 2 / 2 / 3; /* Spans first row and first two columns */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    align-self: start;
+    margin-top: 40px;
+    justify-content: left;
+}
+
 .logo p {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
+    color: aliceblue;
+    margin: 0; /* Remove any default margins */
 }
 
 /* Hamburger */
 .hamburger {
-    display: flex; /* Always visible */
+    grid-area: 1 / 5 / 2 / 6; /* Hamburger spans last two columns in the first row */
+    display: flex;
     flex-direction: column;
-    cursor: pointer;
-    margin-left: auto; /* Space between logo and hamburger */
-    margin-right: 20px; /* Space between hamburger and nav */
+    align-items: flex-end; /* Align items to the right */
+    justify-content: start;
+    margin: 10px 10px 0 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+
 }
 
 .hamburger .line {
@@ -52,26 +65,32 @@ header {
 .nav-links {
     display: none; /* Hidden by default */
     flex-direction: column;
-    position: fixed; /* Make it a fixed popup */
+    position: fixed;
     top: 5%;
-    right: 0%; /* Position to the right */
+    right: 0;
     background-color: darkred;
-    width: 200px; /* Smaller window size */
+    width: 200px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for popup effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    align-items: end;
+    align-items: flex-start;
+
+    opacity: 0; /* Fully transparent initially */
+    pointer-events: none; /* Disable interactions when not visible */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
 }
 
 .nav-links.active {
-    display: flex; /* Show when active */
+    display: flex; /* Show links */
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Enable interactions */
 }
 
 .nav-links ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    list-style: none; /* No bullet points */
+    list-style: none;
     margin: 0;
     padding: 0;
     align-items: end;
@@ -88,60 +107,80 @@ header {
     color: #00bcd4;
 }
 
-header div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-header div p {
-    color:aliceblue;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-/* --------------------MAIN------------------------- */
-
-.home {
-    width: 100%;
-    height: 800px;
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Headerline */
+.headerline {
+    grid-area: 2 / 2 / 3 / 4; /* Text spans multiple rows and columns */
 }
 
 .headerline h1 {
-    color:white;
+    color: white;
+    font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
     text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-left: 50%;
-    font-size: 3rem;
+    margin: 10px 0; /* Add spacing between headings */
+}
+
+/* Image */
+.image {
+    grid-area: 1 / 4 / 4 / 6;/* Image spans columns 6 to 8 and rows 2 to 4 */
+    display: flex;
+    align-items: stretch; /* Stretches the content vertically */
+    justify-content: stretch; /* Stretches the content horizontally */
+    overflow: hidden; /* Ensures no overflow beyond grid area */
 }
 
 .femaleingym {
-    border-radius: 50%;
-    padding-left: 50%;
+    width: 100%; /* Full width of the grid area */
+    height: 100%; /* Full height of the grid area */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 50% 0 0 50%;
 }
 
+/* Arrow */
+.arrow {
+    grid-area: 5 / 4 / 6 / 5; /* Center arrow on the last row */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+/* ------------------SERVICE SECTION--------------------------- */
 
+.service-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+}
 
+.service-content .box {
+    background: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    flex: 1;
+    margin: 0 10px;
+}
 
-/* --------------------SECTION SERVICE------------------------- */
+.service-content .box .image {
+    height: 100px;
+    background: darkred;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
 
+.service-content .box .text {
+    font-size: 14px;
+}
 
+/* ------------------ABOUT SECTION--------------------------- */
 
+/* Add any styles for your about section */
 
-/* ----------------------SECTION ABOUT----------------------- */
+/* ------------------SCHEDULE SECTION--------------------------- */
 
-
-
-
-/* ------------------SECTION SCHEDULE--------------------------- */
-
-
+/* Add any styles for your schedule section */
 
 /* ------------------FOOTER--------------------------- */
+
+/* Add any styles for your footer */
