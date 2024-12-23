@@ -225,8 +225,63 @@ span {
 
 
 /* ------------------SCHEDULE SECTION--------------------------- */
-
 /* Add any styles for your schedule section */
+.schedule-section {
+    padding: 2em;
+    background-color:darkred;
+    text-align: center;
+    font-weight: 500px;
+    color: white;
+  }
+  
+  .schedule-section h2 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 1em;
+  }
+  
+  .schedule-table {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5em;
+  }
+  
+  .day {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: left;
+    
+  }
+  
+  
+  .day h3 {
+    font-size: 1.5em;
+    color: #000000;
+    margin-bottom: 1em;
+  }
+  
+  .day ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .day ul li {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    color: #555;
+  }
+/* .sch-img {
+    width: 25%;
+    height: 25%;
+    border-radius: 50% 0 0 50%;
+    display:left;
+} */
+
 
 
 
