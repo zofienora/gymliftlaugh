@@ -228,15 +228,17 @@ span {
 /* Add any styles for your schedule section */
 .schedule-section {
     padding: 2em;
-    background-color:darkred;
     text-align: center;
     font-weight: 500px;
-    color: white;
-  }
+    background-repeat: no-repeat;
+    width:fit-content;
+    background-image:url(images/sch_bg.png);
+    background-size: cover;
+     }
   
   .schedule-section h2 {
-    font-size: 2em;
-    color: white;
+    font-size: 35px;
+    color: darkred;
     margin-bottom: 1em;
   }
   
@@ -248,32 +250,39 @@ span {
   }
   
   .day {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5em;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    text-align: left;
+    width: 300px;
+    height: 280px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 15px 15px 10px #000000,
+               -15px -15px 10px #000000;
+    opacity: 0.7;
+    justify-content: center;
+   
     
   }
   
   
   .day h3 {
     font-size: 1.5em;
-    color: #000000;
+    color: #0000008a;
     margin-bottom: 1em;
+    font-weight: bold;
+    margin-top: 1.3em;
   }
   
   .day ul {
     list-style-type: none;
     padding: 0;
+    justify-content: center;
   }
   
   .day ul li {
     font-size: 1em;
     margin-bottom: 0.5em;
-    color: #555;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    justify-content: center;
   }
 /* .sch-img {
     width: 25%;
